@@ -17,7 +17,10 @@ async def on_command_error(ctx, error):
 async def ping(ctx):
     await ctx.send('pong')
 
-
+@bot.command()
+async def ねこは(ctx):
+    await ctx.send('かわいい')
+    
 bot.run(token)
 import discord
 from discord.ext import commands
