@@ -1,3 +1,6 @@
+
+# -*- coding: utf-8 -*-
+
 import discord
 from discord.ext import commands
 import asyncio
@@ -16,12 +19,12 @@ class arahabaki_ng_word(commands.Cog):
     @commands.command(name="off")
     async def switch_off(self, message):
         self.hannnou = 0
-        await message.send("OFF縺ｫ縺励◆縲・)
+        await message.send("OFFにした。")
 
     @commands.command(name="on")
     async def switch_on(self, message):
         self.hannnou = 1
-        await message.send("ON縺ｫ縺励◆縲・)
+        await message.send("ONにした。")
 
     @commands.Cog.listener()
     async def on_message(self, message):
@@ -35,9 +38,8 @@ class arahabaki_ng_word(commands.Cog):
             if any(bad_word in message.content for bad_word in bad_words):
                 nanika = message.channel.id
                 channelsss = message.guild.get_channel(nanika)
-                await channelsss.send(embed=discord.Embed(title="霎槭ａ縺ｦ縺上ｌ・・, description=f"縺昴ｌ縺ｯ繝繝｡縺・―n{message.author.mention}", colour=colour), delete_after=10)
+                await channelsss.send(embed=discord.Embed(title="辞めてくれ！", description=f"それはダメだ！\n{message.author.mention}", colour=colour), delete_after=10)
 
 
 def setup(bot):
     bot.add_cog(arahabaki_ng_word(bot))
-
